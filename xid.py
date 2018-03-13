@@ -64,7 +64,7 @@ objectIDGenerator = generateNextId()
 def generate_new_xid():
     # type: () -> List[int]
     now = int(time.time())
-    id = [0] * rawLen
+    id = list([0] * rawLen) # python3 map object is not subscriptable
 
     id[0] = (now >> 24) & 0xff
     id[1] = (now >> 16) & 0xff
